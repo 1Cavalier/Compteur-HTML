@@ -1,0 +1,46 @@
+* {
+    list-style-type: none;
+}
+
+body>div {
+    max-width: 1300px;
+    width: 80%;
+    height: auto;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    justify-content: center;
+    grid-gap: 10px;
+}
+
+body>div>div {
+    width: 175px;
+    height: 250px;
+    background: rgb(194, 189, 189);
+}
+
+
+/* Compteur */
+
+body {
+    counter-reset: section;
+}
+
+div>div>ul {
+    counter-reset: section2;
+}
+
+div>div>h1::before {
+    counter-increment: section;
+    content: "Groupe " counter(section) " : ";
+}
+
+div>div>ul li::before {
+    counter-increment: section2;
+    content: "Etudiant  " counter(section2) " : ";
+}
+
+div>div>p::before {
+    counter-increment: section2;
+    content: "Total  " counter(section2) " -1 : ";
+}
